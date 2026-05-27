@@ -1,5 +1,10 @@
 # Assignment 5.1: Will the Customer Accept the Coupon?
 
+## Project Files
+
+- [Jupyter Notebook](prompt.ipynb)
+- [Dataset](data/coupons.csv)
+
 ## Overview
 
 The goal of this project is to analyze a UCI Machine Learning dataset that comes from a survey conducted by Amazon 
@@ -50,83 +55,107 @@ If we analyze each coupon type individually, we can see that the characteristics
 
 #### Coffee House
 
-|  | feature | value | acceptance\_rate | n |
-| :--- | :--- | :--- | :--- | :--- |
-| 53 | occupation | Healthcare Practitioners & Technical | 76.056338 | 71 |
-| 45 | occupation | Building & Grounds Cleaning & Maintenance | 72.727273 | 11 |
-| 83 | CoffeeHouse | 4\~8 | 68.244576 | 507 |
-| 29 | age | below21 | 67.832168 | 143 |
-| 84 | CoffeeHouse | gt8 | 65.789474 | 342 |
+| feature | value | acceptance\_rate | n |
+| :--- | :--- | :--- | :--- |
+| CoffeeHouse | 4\~8 | 68.244576 | 507 |
+| age | below21 | 67.832168 | 143 |
+| CoffeeHouse | gt8 | 65.789474 | 342 |
+| CoffeeHouse | 1\~3 | 64.729064 | 1015 |
+| time | 10AM | 63.434579 | 856 |
+
 
 ### Carry out & Take away
 
-|  | feature | value | acceptance\_rate | n |
-| :--- | :--- | :--- | :--- | :--- |
-| 45 | occupation | Building & Grounds Cleaning & Maintenance | 100.000000 | 9 |
-| 62 | occupation | Protective Service | 96.666667 | 30 |
-| 49 | occupation | Construction & Extraction | 96.428571 | 28 |
-| 41 | education | Some High School | 93.750000 | 16 |
-| 53 | occupation | Healthcare Practitioners & Technical | 92.500000 | 40 |
+| feature | value | acceptance\_rate | n |
+| :--- | :--- | :--- | :--- |
+| time | 2PM | 86.602871 | 209 |
+| education | Associates degree | 83.248731 | 197 |
+| time | 6PM | 81.995134 | 411 |
+| destination | Home | 79.126214 | 618 |
+| income | $25000 - $37499 | 78.711485 | 357 |
+
 
 ### Restaurant(<20)
 
-|  | feature | value | acceptance\_rate | n |
-| :--- | :--- | :--- | :--- | :--- |
-| 62 | occupation | Protective Service | 89.473684 | 38 |
-| 49 | occupation | Construction & Extraction | 88.571429 | 35 |
-| 18 | expiration | 1d | 83.553142 | 1289 |
-| 57 | occupation | Life Physical Social Science | 83.333333 | 36 |
-| 16 | time | 6PM | 82.657343 | 715 |
+| feature | value | acceptance\_rate | n |
+| :--- | :--- | :--- | :--- |
+| expiration | 1d | 83.553142 | 1289 |
+| time | 6PM | 82.657343 | 715 |
+| time | 2PM | 81.487102 | 659 |
+| passanger | Friend\(s\) | 80.354880 | 789 |
+| occupation | Sales & Related | 79.828326 | 233 |
+
 
 ### Restaurant(20-50)
 
-|  | feature | value | acceptance\_rate | n |
-| :--- | :--- | :--- | :--- | :--- |
-| 61 | occupation | Production Occupations | 72.727273 | 11 |
-| 99 | Restaurant20To50 | gt8 | 68.750000 | 32 |
-| 54 | occupation | Healthcare Support | 65.625000 | 32 |
-| 98 | Restaurant20To50 | 4\~8 | 63.095238 | 84 |
-| 6 | passanger | Partner | 62.500000 | 136 |
+| feature | value | acceptance\_rate | n |
+| :--- | :--- | :--- | :--- |
+| passanger | Partner | 62.500000 | 136 |
+| time | 10AM | 60.747664 | 107 |
+| CoffeeHouse | 1\~3 | 55.124654 | 361 |
+| time | 2PM | 54.597701 | 174 |
+| occupation | Computer & Mathematical | 53.374233 | 163 |
+
 
 ### Bar
 
-|  | feature | value | acceptance\_rate | n |
-| :--- | :--- | :--- | :--- | :--- |
-| 41 | education | Some High School | 78.571429 | 14 |
-| 78 | Bar | 4\~8 | 77.551020 | 147 |
-| 79 | Bar | gt8 | 71.739130 | 46 |
-| 61 | occupation | Production Occupations | 68.750000 | 16 |
-| 43 | occupation | Architecture & Engineering | 66.666667 | 27 |
+| feature | value | acceptance\_rate | n |
+| :--- | :--- | :--- | :--- |
+| Bar | 4\~8 | 77.551020 | 147 |
+| Bar | 1\~3 | 64.643799 | 379 |
+| Restaurant20To50 | 4\~8 | 63.063063 | 111 |
+| passanger | Friend\(s\) | 56.645570 | 316 |
+| occupation | Management | 55.769231 | 104 |
+
 
 ## Top 10 Acceptance Segments Across All Coupons
 
 Merged together, and after removing small segments that are not significant,
 we can see that the top 10 acceptance segments across all coupons are:
 
-|  | feature | value | acceptance\_rate | n | coupon |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| 15 | time | 2PM | 86.602871 | 209 | Carry out & Take away |
-| 18 | expiration | 1d | 83.553142 | 1289 | Restaurant\(&lt;20\) |
-| 37 | education | Associates degree | 83.248731 | 197 | Carry out & Take away |
-| 16 | time | 6PM | 82.657343 | 715 | Restaurant\(&lt;20\) |
-| 16 | time | 6PM | 81.995134 | 411 | Carry out & Take away |
-| 15 | time | 2PM | 81.487102 | 659 | Restaurant\(&lt;20\) |
-| 4 | passanger | Friend\(s\) | 80.354880 | 789 | Restaurant\(&lt;20\) |
-| 64 | occupation | Sales & Related | 79.828326 | 233 | Restaurant\(&lt;20\) |
-| 1 | destination | No Urgent Place | 79.458795 | 1626 | Restaurant\(&lt;20\) |
-| 0 | destination | Home | 79.126214 | 618 | Carry out & Take away |
+| feature     | value | acceptance\_rate | n | coupon |
+|:------------| :--- | :--- | :--- | :--- |
+| time        | 2PM | 86.602871 | 209 | Carry out & Take away |
+| expiration  | 1d | 83.553142 | 1289 | Restaurant\(&lt;20\) |
+| education   | Associates degree | 83.248731 | 197 | Carry out & Take away |
+| time        | 6PM | 82.657343 | 715 | Restaurant\(&lt;20\) |
+| time        | 6PM | 81.995134 | 411 | Carry out & Take away |
+| time        | 2PM | 81.487102 | 659 | Restaurant\(&lt;20\) |
+| passanger   | Friend\(s\) | 80.354880 | 789 | Restaurant\(&lt;20\) |
+| occupation  | Sales & Related | 79.828326 | 233 | Restaurant\(&lt;20\) |
+| destination | No Urgent Place | 79.458795 | 1626 | Restaurant\(&lt;20\) |
+| destination | Home | 79.126214 | 618 | Carry out & Take away |
+
 
 ![Top10AcceptanceSegmentsAcrossAllCoupons](images/Top10AcceptanceSegmentsAcrossAllCoupons.png)
 
-# Conclusion
+### Conclusion
 
-As expected, drivers are more likely to accept coupons for food (Restaurant <$20 and Carry out) around lunch 
-(2PM) and dinner (6PM), where acceptance rates are near 80%.
+The charts show that customers are more likely to accept food-related coupons than bar coupons.
+
+The highest acceptance rates are for:
+- Carry out & Take away
+- Restaurant(<20)
+
+The charts also show that time matters. Food coupons perform especially well around:
+- 2PM
+- 6PM
 
 For Bar coupons specifically, the deeper analysis showed that drivers who are already regular customers are more 
 likely to accept them, but even then, the acceptance rate is still below Restaurant coupons at lunch or dinner.
 
+### Recommendations
 
+1. Send more food coupons than bar coupons.
+2. Focus food coupons around common meal times like 2PM and 6PM.
+3. Use bar coupons for customers who already show interest in bars.
+4. Keep future analysis simple and compare one coupon type at a time.
+
+### Next Steps
+
+- The next step is to keep exploring which customer groups respond best to each coupon type.
+- Check for ways to find out good threshold values; we are using 100 without further explanation, 
+just to avoid the smallest subsets.
 
 
 
